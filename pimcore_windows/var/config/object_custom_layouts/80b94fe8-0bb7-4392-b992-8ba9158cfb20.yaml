@@ -1,0 +1,32 @@
+pimcore:
+    objects:
+        custom_layouts:
+            definitions:
+                80b94fe8-0bb7-4392-b992-8ba9158cfb20:
+                    id: 80b94fe8-0bb7-4392-b992-8ba9158cfb20
+                    name: test
+                    description: ''
+                    creationDate: 1685357408
+                    modificationDate: 1685357414
+                    userOwner: 2
+                    classId: '1'
+                    layoutDefinitions:
+                        name: pimcore_root
+                        type: null
+                        region: null
+                        title: null
+                        width: 0
+                        height: 0
+                        collapsible: false
+                        collapsed: false
+                        bodyStyle: null
+                        datatype: layout
+                        children: {  }
+                        locked: false
+                        fieldtype: panel
+                        layout: null
+                        border: false
+                        icon: null
+                        labelWidth: 100
+                        labelAlign: left
+                    default: 0

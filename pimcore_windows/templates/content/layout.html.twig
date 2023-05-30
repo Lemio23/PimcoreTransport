@@ -1,0 +1,123 @@
+<?php
+	session_start();
+?>
+<!DOCTYPE HTML>
+<html lang="pl">
+<head>
+	<meta charset="utf-8"/>
+	
+	<title>Transport Towarów</Title>
+	<script src="main.js"></script>
+	
+	<meta name="description" content="Przewóz towarów drogą powietrzną"/>
+	<meta name="keywords" content="transport, samolot, przewóz, towar"/>
+
+	<link rel="stylesheet" href="style.css" type="text/css"/>
+	<link rel="stylesheet"  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+
+</head>
+
+<body onload="onloadFunc();">
+
+	<div id="container">
+		<div id="upperContainer">
+		
+			<div id="logo">
+				<img src="images/logo.png" alt="Logo" style="width:100%;"/>
+			</div>
+			
+			<div id="header">
+				<i>Transport towarów drogą powietrzną</i>
+			</div>
+			
+			<div id="clock">
+				12:00:00
+			</div>
+		</div>
+		
+		<div id="middleContainer">
+		
+			<div id="formContainer">
+				<form id="formularz"  action="form.php" method="post" enctype="multipart/form-data">
+				
+					Transport z: <input type="text" name="transportFrom"/> <br>
+					Transport do: <input type="text" name="transportTo"/> <br>
+					<div id="errorTransport">
+					<?php
+					if (isset($_SESSION['errorTransportFrom'])){ 
+					echo $_SESSION['errorTransportFrom'];
+					unset($_SESSION['errorTransportFrom']);
+					}
+					if (isset($_SESSION['errorTransportTo'])){ 
+					echo $_SESSION['errorTransportTo'];
+					unset($_SESSION['errorTransportTo']);
+					}
+					?>
+					</div>
+					Typ samolotus:
+					<select id="planeType" name="planeType">
+						<option value="AirbusA380" selected>Airbus A380</option>  
+						<option value="Boeing747">Boeing 747</option>
+					</select> <br>
+					Dokumenty przewozowe:
+					<div id="documentContainer">
+						<input type="file" name="shippingDocuments" multiple accept=".jpg,.png,.doc,.docx,.pdf"/>
+						<label for="shippingDocuments">
+						<i class="fa-solid fa-upload"></i>&nbsp;
+							Wybierz lub przeciągnij dokumenty przewozowe
+						</label>
+						<div id="docError"></div>
+						<div id="fileDisplay"></div>
+					</div>
+					
+					Data transportu: <input type="date" name="transportDate" value="2023-06-01" min="2023-06-01"/> <br>
+					<div id="errorDate">
+					<?php
+					if (isset($_SESSION['errorTransportDate'])){ 
+					echo $_SESSION['errorTransportDate'];
+					unset($_SESSION['errorTransportDate']);
+					}
+					?>
+					</div>
+					<div id="cargoContainer"></div>
+					
+					
+					
+				
+				</form>
+				<button onclick="addCargo();">Dodaj ładunek</button> <br>
+				<div id="cargoError">
+				<?php
+					if (isset($_SESSION['errorBoeing'])){ 
+					echo $_SESSION['errorBoeing'];
+					unset($_SESSION['errorBoeing']);
+					}
+					if (isset($_SESSION['errorAirbus'])){ 
+					echo $_SESSION['errorAirbus'];
+					unset($_SESSION['errorAirbus']);
+					}
+					if (isset($_SESSION['errorCargoName'])){ 
+					echo $_SESSION['errorCargoName'];
+					unset($_SESSION['errorCargoName']);
+					}
+					if (isset($_SESSION['errorCargoCiezar'])){ 
+					echo $_SESSION['errorCargoCiezar'];
+					unset($_SESSION['errorCargoCiezar']);
+					}
+				?>
+				</div>
+				
+				<button type="submit" form="formularz" value="send">Wyślij</button>
+			</div>
+		
+		</div>
+		
+		<div id="footer">
+		Piotr Szymańki piotrszym01@wp.pl
+		</div>
+	
+	
+	</div>
+
+</body>

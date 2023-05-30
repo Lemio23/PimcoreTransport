@@ -1,0 +1,8 @@
+{% extends 'layout.html.twig' %}
+
+{% block content %}
+
+    {% for i in pimcore_iterate_block(pimcore_block('contentblock')) %}
+        {{ pimcore_wysiwyg('content') }}
+    {% endfor %}
+{% endblock %}
