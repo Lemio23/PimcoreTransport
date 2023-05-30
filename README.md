@@ -43,5 +43,6 @@ b)nazwa: formUpload
 wybierz "save and publish"
 
 11.Strona jest dostępna pod "localhost/mainPage"
+UWAGA: możliwe, że żeby strona działała należy zmienić ścieżkę do folderu "files" w pliku "src\Controller\DefaultController.php"
 
 Piotr Szymański piotrszym01@wp.pl
