@@ -18,10 +18,13 @@ Instalacja:
 a)nazwa: mainPage
 +SEO+ & Settings -> Controller, action & template -> Controller i ustaw App\Controller\ContentController::defaultAction
 +SEO+ & Settings -> Controller, action & template -> Template i ustaw layout.php.twig
+Wybierz "save and publish"
 
 b)nazwa: formUpload
 +SEO+ & Settings -> Controller, action & template -> Controller i ustaw App\Controller\DefaultController::formAction
 +SEO+ & Settings -> Controller, action & template -> Template i ustaw default\default.html.twig
+wybierz "save and publish"
 
+11.Strona jest dostępna pod "localhost/mainPage"
 
 Piotr Szymański piotrszym01@wp.pl
