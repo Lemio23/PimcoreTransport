@@ -26,7 +26,7 @@ Instalacja:
 
 10.Wejdź w documents i utwórz 2 dokumenty(kliknij prawym na home->Add Page->Blank)
 
-a)nazwa: mainPage
+a)nazwa: mainpage
 
 +SEO+ & Settings -> Controller, action & template -> Controller i ustaw App\Controller\ContentController::defaultAction
 
